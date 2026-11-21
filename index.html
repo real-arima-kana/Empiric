@@ -79,4 +79,15 @@
 .star-orbit .merged-star{display:block;width:1em;height:1em;overflow:visible;filter:drop-shadow(0 0 4px #f1cb7570)}.star-orbit.tier-1 .orbit-star{font-size:22px}.star-orbit.tier-1:has(.orbit-star:only-child) .orbit-star{font-size:31px}
 @media(max-width:380px){.star-orbit.tier-1 .orbit-star{font-size:19px}.star-orbit.tier-1:has(.orbit-star:only-child) .orbit-star{font-size:27px}}
 @media(prefers-reduced-motion:reduce){#app>.page-content,#app>.page-content.page-exiting{animation:none!important}}
+
+/* V2.2: immediate overlapping crossfade and bottom-aligned home metrics */
+#app>.page-content{position:relative;min-height:0}
+#app>.page-content.page-ghost{position:absolute!important;z-index:3;top:var(--content-top,76px);left:50%;width:calc(100% - 40px);max-width:560px;transform:translateX(-50%)!important;pointer-events:none!important;animation:none!important;opacity:1;transition:opacity var(--exit-duration,500ms) cubic-bezier(.12,.76,.24,1)!important}
+#app>.page-content.page-ghost.ghost-leaving{opacity:0}
+#app.home-active>.page-content:not(.page-ghost){flex:1;min-height:0;display:flex;flex-direction:column}
+#app.home-active>.page-content:not(.page-ghost)>.home-stage{flex:1;min-height:0;justify-content:initial;padding-bottom:clamp(22px,3.8vh,40px)}
+#app.home-active .home-stage .pyramid{flex:1;min-height:0}
+#app.home-active .home-stage .home-score{flex-shrink:0;margin-top:auto;margin-bottom:0}
+#app.home-active .home-stage .home-meta{flex-shrink:0;margin-top:8px}
+@media(prefers-reduced-motion:reduce){#app>.page-content.page-ghost{transition:none!important;opacity:0!important}}
 </style></head><body><div id="app" class="app"></div><div id="toast" class="hidden"></div><script src="app.js"></script></body></html>
