@@ -90,4 +90,13 @@
 /* V2.5: Web Animations exclusively owns page opacity. No legacy keyframes. */
 #app>.page-content,#app>.page-content.menu-fade-in,#app>.page-content.menu-fade-out{animation:none!important;transition:none!important;opacity:1;transform:none!important}
 #app>.page-content .hero,#app>.page-content .panel,#app>.page-content .stats,#app>.page-content .pyramid,#app>.page-content .pyr-row,#app>.page-content .home-stage,#app>.page-content .home-score,#app>.page-content .home-meta{animation:none!important;transform:none!important}
-</style></head><body><div id="app" class="app"></div><div id="undo-bar" class="hidden" role="status" aria-live="polite"></div><div id="toast" class="hidden"></div><script src="./app.js?v=2.7"></script></body></html>
+
+/* V2.8 · compact finishing touches and accessible interaction states */
+#app .panel{border-color:#344138}
+#app .habit:focus-within{background:#ffffff05;border-radius:8px}
+#app .answer button:focus-visible,#app .nav button:focus-visible,#undo-bar button:focus-visible{outline:2px solid #bce5c4;outline-offset:3px}
+#app .note{line-height:1.6}
+#app .footer{padding-bottom:12px;letter-spacing:.1em}
+#undo-bar{box-shadow:0 10px 32px #0008}
+@media(prefers-reduced-motion:reduce){#app .block,#app .nav button{transition:none!important}}
+</style></head><body><div id="app" class="app"></div><div id="undo-bar" class="hidden" role="status" aria-live="polite"></div><div id="toast" class="hidden"></div><script src="./app.js?v=2.8"></script></body></html>
