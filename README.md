@@ -20,3 +20,7 @@ All data is stored in browser localStorage, not synced between devices. Settings
 ## Preview
 
 The home page has a preview mode showing all 30 rows. It does not change challenge progress.
+
+## Version 1.1
+
+Refined forest-green palette, SOLO LEVELING branding, animated interactions, and a mobile keyboard fix (the app no longer re-renders on viewport resize).
