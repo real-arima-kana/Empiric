@@ -24,3 +24,7 @@ The home page has a preview mode showing all 30 rows. It does not change challen
 ## Version 1.1
 
 Refined forest-green palette, SOLO LEVELING branding, animated interactions, and a mobile keyboard fix (the app no longer re-renders on viewport resize).
+
+## Version 1.2
+
+Home fits the viewport, pending check-in badge, selectable list/swipe check-in, optional bottom-up pyramid build, cascaded screen entrances, and isolated demo presets with next-day simulation. Debug data uses a separate localStorage key.
