@@ -71,7 +71,7 @@
 @media(prefers-reduced-motion:reduce){#app> :not(.top):not(.nav):not(.modal-wrap),#app.home-active>.home-stage,#app.home-active>.home-stage .hero,#app.home-active>.home-stage .pyramid,#app.home-active>.home-stage .home-score,#app.home-active>.home-stage .home-meta,#app .modal-wrap,#app .modal{animation:none!important}}
 
 /* V2.1: true sequential page cross-navigation, no movement */
-#app>.page-content{animation:empiricFade calc(var(--fade-duration)/2) var(--fade-easing) both!important;min-width:0}
+#app>.page-content{animation:empiricFade var(--half-fade,500ms) var(--fade-easing) both!important;min-width:0}
 #app>.page-content.page-exiting{animation:empiricFade var(--exit-duration) var(--fade-easing) reverse both!important;pointer-events:none}
 #app>.page-content>*:not(.swipe-zone),#app>.page-content .home-stage,#app>.page-content .hero,#app>.page-content .panel,#app>.page-content .pyramid,#app>.page-content .pyr-row,#app>.page-content .home-score,#app>.page-content .home-meta{animation:none!important;transform:none!important}
 #app.build-on .page-content .home-stage .block{animation:buildBlock .24s cubic-bezier(.16,.8,.24,1) both!important;animation-delay:calc((29 - var(--row))*27ms + var(--col)*2ms)!important}
