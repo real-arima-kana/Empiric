@@ -86,4 +86,8 @@
 .star-number{font-size:20px;color:#f2d58e}
 @media(max-width:380px){.star-orbit.tier-1 .orbit-star{font-size:19px}.star-orbit.tier-1:has(.orbit-star:only-child) .orbit-star{font-size:27px}}
 @media(prefers-reduced-motion:reduce){#app>.page-content.menu-fade-out,#app>.page-content.menu-fade-in,#app .modal-wrap,#app .modal{animation:none!important}}
+
+/* V2.5: Web Animations exclusively owns page opacity. No legacy keyframes. */
+#app>.page-content,#app>.page-content.menu-fade-in,#app>.page-content.menu-fade-out{animation:none!important;transition:none!important;opacity:1;transform:none!important}
+#app>.page-content .hero,#app>.page-content .panel,#app>.page-content .stats,#app>.page-content .pyramid,#app>.page-content .pyr-row,#app>.page-content .home-stage,#app>.page-content .home-score,#app>.page-content .home-meta{animation:none!important;transform:none!important}
 </style></head><body><div id="app" class="app"></div><div id="undo-bar" class="hidden" role="status" aria-live="polite"></div><div id="toast" class="hidden"></div><script src="app.js"></script></body></html>
