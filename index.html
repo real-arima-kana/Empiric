@@ -90,4 +90,12 @@
 #app.home-active .home-stage .home-score{flex-shrink:0;margin-top:auto;margin-bottom:0}
 #app.home-active .home-stage .home-meta{flex-shrink:0;margin-top:8px}
 @media(prefers-reduced-motion:reduce){#app>.page-content.page-ghost{transition:none!important;opacity:0!important}}
-</style></head><body><div id="app" class="app"></div><div id="toast" class="hidden"></div><script src="app.js"></script></body></html>
+
+/* V2.3 · actual fade-out above immediately rendered next screen */
+#app>.page-content.page-ghost{animation:none!important;transform:none!important;transition:opacity var(--exit-duration,1000ms) cubic-bezier(.12,.76,.24,1)!important;opacity:1!important;overflow:hidden!important}
+#app>.page-content.page-ghost.ghost-leaving{opacity:0!important}
+#app>.page-content.page-ghost *{animation:none!important;transition:none!important}
+#undo-bar{position:fixed;left:50%;bottom:calc(94px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:9;background:#24352b;border:1px solid #56725e;border-radius:12px;box-shadow:0 8px 26px #0006;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:24px;width:max-content;max-width:calc(100vw - 30px);color:#e4efe6;font-size:13px}
+#undo-bar button{background:transparent;border:0;color:#bde7c5;font-weight:800;letter-spacing:.1em;padding:6px;cursor:pointer}
+@media(prefers-reduced-motion:reduce){#app>.page-content.page-ghost{transition:none!important;opacity:0!important}}
+</style></head><body><div id="app" class="app"></div><div id="undo-bar" class="hidden" role="status" aria-live="polite"></div><div id="toast" class="hidden"></div><script src="app.js"></script></body></html>
