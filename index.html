@@ -58,4 +58,15 @@
 .app:not(.home-active)>:not(.top):not(.nav):not(.modal-wrap),.hero,.panel,.stats,.pyramid,.pyr-row{animation-duration:.5s!important;animation-timing-function:cubic-bezier(.12,.76,.24,1)!important}.modal-wrap,.modal{animation-duration:.38s!important;animation-timing-function:cubic-bezier(.12,.76,.24,1)!important}.swipe-complete{opacity:0;animation:none!important;transition:opacity .65s cubic-bezier(.12,.76,.24,1)}.swipe-complete.shown{opacity:1}.swipe-zone>.swipe-complete:not(.shown){animation:answeredFade .65s cubic-bezier(.12,.76,.24,1) both!important}@keyframes answeredFade{from{opacity:0}to{opacity:1}}
 @media(max-width:380px){.star-orbit{width:40px;height:40px}.orbit-star{font-size:14px;transform:translate(-50%,-50%) rotate(var(--angle)) translateY(-14px) rotate(calc(-1 * var(--angle)))}.star-orbit:has(.orbit-star:only-child) .orbit-star{font-size:23px}}
 @media(prefers-reduced-motion:reduce){.swipe-complete,.swipe-complete.shown{animation:none!important;transition:none!important;opacity:1!important}}
+
+/* V2.0 · consistent opacity-only page transitions, adjustable duration */
+#app{--fade-duration:1000ms;--fade-easing:cubic-bezier(.12,.76,.24,1)}
+@keyframes empiricFade{from{opacity:0}to{opacity:1}}
+#app> :not(.top):not(.nav):not(.modal-wrap),#app.home-active>.home-stage,#app.home-active>.home-stage .hero,#app.home-active>.home-stage .pyramid,#app.home-active>.home-stage .home-score,#app.home-active>.home-stage .home-meta,#app.home-active>.home-stage .home-extra{animation:empiricFade var(--fade-duration) var(--fade-easing) both!important;transform:none!important;animation-delay:0ms!important}
+#app.build-on.home-active .home-stage .block{animation:buildBlock .24s cubic-bezier(.16,.8,.24,1) both!important;animation-delay:calc((29 - var(--row))*27ms + var(--col)*2ms)!important}
+#app.build-off.home-active .home-stage .block{animation:none!important}
+#app .modal-wrap,#app .modal{animation:empiricFade var(--fade-duration) var(--fade-easing) both!important}
+.star-orbit{border:0;appearance:none;padding:0;outline-offset:4px;z-index:2}.star-orbit:focus-visible{outline:2px solid #f1cb75}
+.fade-select{width:145px;max-width:45%;padding:10px 6px;margin:0 0 0 10px;font-size:11px;flex-shrink:0}
+@media(prefers-reduced-motion:reduce){#app> :not(.top):not(.nav):not(.modal-wrap),#app.home-active>.home-stage,#app.home-active>.home-stage .hero,#app.home-active>.home-stage .pyramid,#app.home-active>.home-stage .home-score,#app.home-active>.home-stage .home-meta,#app .modal-wrap,#app .modal{animation:none!important}}
 </style></head><body><div id="app" class="app"></div><div id="toast" class="hidden"></div><script src="app.js"></script></body></html>
