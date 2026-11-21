@@ -69,4 +69,14 @@
 .star-orbit{border:0;appearance:none;padding:0;outline-offset:4px;z-index:2}.star-orbit:focus-visible{outline:2px solid #f1cb75}
 .fade-select{width:145px;max-width:45%;padding:10px 6px;margin:0 0 0 10px;font-size:11px;flex-shrink:0}
 @media(prefers-reduced-motion:reduce){#app> :not(.top):not(.nav):not(.modal-wrap),#app.home-active>.home-stage,#app.home-active>.home-stage .hero,#app.home-active>.home-stage .pyramid,#app.home-active>.home-stage .home-score,#app.home-active>.home-stage .home-meta,#app .modal-wrap,#app .modal{animation:none!important}}
+
+/* V2.1: true sequential page cross-navigation, no movement */
+#app>.page-content{animation:empiricFade calc(var(--fade-duration)/2) var(--fade-easing) both!important;min-width:0}
+#app>.page-content.page-exiting{animation:empiricFade var(--exit-duration) var(--fade-easing) reverse both!important;pointer-events:none}
+#app>.page-content>*:not(.swipe-zone),#app>.page-content .home-stage,#app>.page-content .hero,#app>.page-content .panel,#app>.page-content .pyramid,#app>.page-content .pyr-row,#app>.page-content .home-score,#app>.page-content .home-meta{animation:none!important;transform:none!important}
+#app.build-on .page-content .home-stage .block{animation:buildBlock .24s cubic-bezier(.16,.8,.24,1) both!important;animation-delay:calc((29 - var(--row))*27ms + var(--col)*2ms)!important}
+#app.build-off .page-content .home-stage .block{animation:none!important}
+.star-orbit .merged-star{display:block;width:1em;height:1em;overflow:visible;filter:drop-shadow(0 0 4px #f1cb7570)}.star-orbit.tier-1 .orbit-star{font-size:22px}.star-orbit.tier-1:has(.orbit-star:only-child) .orbit-star{font-size:31px}
+@media(max-width:380px){.star-orbit.tier-1 .orbit-star{font-size:19px}.star-orbit.tier-1:has(.orbit-star:only-child) .orbit-star{font-size:27px}}
+@media(prefers-reduced-motion:reduce){#app>.page-content,#app>.page-content.page-exiting{animation:none!important}}
 </style></head><body><div id="app" class="app"></div><div id="toast" class="hidden"></div><script src="app.js"></script></body></html>
